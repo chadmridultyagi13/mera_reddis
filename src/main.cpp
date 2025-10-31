@@ -59,7 +59,6 @@ int main(int argc, char **argv){
     send(client_fd , response.c_str(), response.length(), 0 ) ;
   }
   close(server_fd);
-  close(client_fd);
 
   return 0;
 }
