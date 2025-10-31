@@ -56,6 +56,7 @@ int main(int argc, char **argv){
     std ::cerr << "accept failed\n" ;
   }
   else{
+    std::cout << "Received: " << buffer << "\n";
     std :: string response = "+PONG\r\n" ;
     send(client_fd , response.c_str(), response.length(), 0 ) ;
   }
