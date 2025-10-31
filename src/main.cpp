@@ -51,7 +51,7 @@ int main(int argc, char **argv){
   accept(server_fd, (struct sockaddr *) &client_addr, (socklen_t *) &client_addr_len);
   std::cout << "Client connected\n";
   
-  int client_fd = accept(server_fd, (struct sockaddr *)&client_addr ,(socketlen_t*)&client_addr_len);
+  int client_fd = accept(server_fd, (struct sockaddr *)&client_addr ,(socklen_t*)&client_addr_len);
   if(client_fd<0){
     std ::cerr << "accept failed\n" ;
   }
