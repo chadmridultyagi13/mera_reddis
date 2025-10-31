@@ -58,8 +58,8 @@ int main(int argc, char **argv){
     std :: string response = "+PONG\r\n" ;
     send(client_fd , response.c_str(), response.length(), 0 ) ;
   }
-  close(client_fd);
   close(server_fd);
+  close(client_fd);
 
   return 0;
 }
