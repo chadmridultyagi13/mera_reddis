@@ -53,13 +53,13 @@ int main(int argc, char **argv){
   
   int client_fd = accept(server_fd, (struct sockaddr *)&client_addr ,(socklen_t*)&client_addr_len);
   if(client_fd<0){
-    std ::cerr << "accept failed\n" ;
+    std ::cerr << "accept failed\n" ; 
   }
   else{
-    std::cout << "Received: " << buffer << "\n";
     std :: string response = "+PONG\r\n" ;
     send(client_fd , response.c_str(), response.length(), 0 ) ;
   }
+  close(client_fd)
   close(server_fd);
 
   return 0;
