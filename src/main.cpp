@@ -53,7 +53,7 @@ int main(int argc, char **argv){
 
   if(client_fd<0){
     std ::cerr << "accept failed\n" ; 
-    break ; 
+    return 1 ; 
   }
   else{
     while(true){
@@ -61,7 +61,7 @@ int main(int argc, char **argv){
     char buffer[1024]= {0} ;
     ssize_t valread = read(client_fd,buffer,sizeof(buffer)) ; 
     if(valread <0){
-      return 1 ; 
+      break ; 
     }
     send(client_fd , response.c_str(), response.length(), 0 ) ;
     }
