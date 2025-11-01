@@ -49,15 +49,18 @@ int main(int argc, char **argv){
   // You can use print statements as follows for debugging, they'll be visible when running tests.
   std::cout << "Logs from your program will appear here!\n";
   std::cout << "Client connected\n";
-  
+  while(true){
   int client_fd = accept(server_fd, (struct sockaddr *)&client_addr ,(socklen_t*)&client_addr_len);
   if(client_fd<0){
     std ::cerr << "accept failed\n" ; 
+    break ; 
   }
   else{
     std :: string response = "+PONG\r\n" ;
     send(client_fd , response.c_str(), response.length(), 0 ) ;
   }
+  close(client_fd) ;
+}
   close(server_fd);
   return 0;
 }
