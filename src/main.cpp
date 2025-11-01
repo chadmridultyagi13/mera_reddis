@@ -60,7 +60,7 @@ int main(int argc, char **argv){
     std :: string response = "+PONG\r\n" ;
     char buffer[1024]= {0} ;
     ssize_t valread = read(client_fd,buffer,sizeof(buffer)) ; 
-    if(valread <=0){
+    if(valread <0){
       break ;
     }
     send(client_fd , response.c_str(), response.length(), 0 ) ;
