@@ -61,7 +61,7 @@ int main(int argc, char **argv){
     char buffer[1024]= {0} ;
     ssize_t valread = read(client_fd,buffer,sizeof(buffer)) ; 
     if(valread <0){
-      break ;
+      return 1 ; 
     }
     send(client_fd , response.c_str(), response.length(), 0 ) ;
     }
