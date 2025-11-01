@@ -11,7 +11,7 @@
 void handle_client(int client_fd){
   char buffer[1024] = {0} ;
   while(true){
-    ssize_t valread = read(client_df,buffer,sizeof(buffer)) ;
+    ssize_t valread = read(client_fd,buffer,sizeof(buffer)) ;
     if(valread<0){
       close(client_fd) ; 
       break ;
